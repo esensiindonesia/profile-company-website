@@ -38,7 +38,7 @@ jobs:
         run: pnpm --filter @esensi-indonesia/web build
         env:
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
-          NEXT_PUBLIC_SITE_URL: https://esensi-indonesia-web-55b.pages.dev
+          NEXT_PUBLIC_SITE_URL: https://esensiindonesia.com
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

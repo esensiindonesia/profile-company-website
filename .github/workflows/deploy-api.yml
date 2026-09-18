@@ -39,8 +39,8 @@ jobs:
       - name: Apply D1 migrations
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_BACKEND }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID_BACKEND }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: apps/api
           packageManager: pnpm
           command: d1 migrations apply esensi-indonesia-new --remote
@@ -48,8 +48,8 @@ jobs:
       - name: Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN_BACKEND }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID_BACKEND }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: apps/api
           packageManager: pnpm
           command: deploy --minify
