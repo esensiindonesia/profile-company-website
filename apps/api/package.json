@@ -1,0 +1,39 @@
+{
+  "name": "@esensi-indonesia/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "start": "wrangler dev --port 8787",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "deploy": "wrangler deploy --minify",
+    "check-types": "tsc --noEmit",
+    "cf-typegen": "wrangler types",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply esensi-indonesia-new --local",
+    "db:migrate:remote": "wrangler d1 migrations apply esensi-indonesia-new --remote",
+    "db:studio": "drizzle-kit studio",
+    "clean": "rimraf dist .wrangler"
+  },
+  "dependencies": {
+    "@better-auth/drizzle-adapter": "^1.7.4",
+    "better-auth": "^1.7.4",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.6.20"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@esensi-indonesia/typescript-config": "workspace:*",
+    "@types/node": "^22.20.1",
+    "drizzle-kit": "^0.31.10",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.3",
+    "wrangler": "^4.0.0"
+  }
+}

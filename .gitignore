@@ -1,0 +1,45 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# build outputs
+dist
+.next
+out
+build
+
+# turborepo
+.turbo
+
+# cloudflare / wrangler
+.wrangler
+.dev.vars
+wrangler.toml.bak
+
+# env files
+.env
+.env*.local
+.env.development
+.env.production
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# testing
+coverage
+
+# misc
+.DS_Store
+*.pem
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.agents

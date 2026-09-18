@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "esensi-indonesia-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "BETTER_AUTH_URL": "https://esensi-indonesia-api.13523101.workers.dev",
+    "CORS_ORIGIN": "https://esensi-indonesia-web-55b.pages.dev,https://esensiindonesia.com"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "esensi-indonesia-new",
+      "database_id": "5d6b5b89-f80f-486c-8fde-f1d05c560300",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "esensi-indonesia"
+    }
+  ]
+}

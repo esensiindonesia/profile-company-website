@@ -1,0 +1,12 @@
+{
+  "extends": "@esensi-indonesia/typescript-config/workers.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    // Runtime + binding types come from the generated worker-configuration.d.ts
+    // (see the `include` below); `node` covers the nodejs_compat globals. This
+    // replaces the base config's @cloudflare/workers-types to avoid duplicates.
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "worker-configuration.d.ts"],
+  "exclude": ["node_modules", "dist", ".wrangler"]
+}
