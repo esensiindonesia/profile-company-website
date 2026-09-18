@@ -6,13 +6,15 @@ import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Our Service", href: "/services" },
+  { label: "Our Services", href: "/services" },
   { label: "Our Certificates", href: "/certificates" },
   { label: "Our Portfolios", href: "/portfolios" },
   { label: "Career", href: "/career" },
   { label: "Contact Us", href: "#site-footer" },
 ] as const;
 
+const PHONE_NUMBER = "0228735625";
+const EMAIL_ADDRESS = "esensi.indonesia@yahoo.com";
 const CONTACT_TEXT =
   "text-[11px] font-normal leading-normal text-white lg:text-xs min-[1920px]:text-sm";
 
@@ -59,10 +61,10 @@ export function Header() {
               className="size-5 shrink-0 md:size-6 min-[1920px]:size-7"
             />
             <a
-              href="tel:02287356254"
+              href={`tel:${PHONE_NUMBER}`}
               className={`${CONTACT_TEXT} whitespace-nowrap transition-colors hover:text-gold`}
             >
-              02287356254
+              {PHONE_NUMBER}
             </a>
           </div>
 
@@ -76,10 +78,10 @@ export function Header() {
               className="size-5 shrink-0 md:size-6 min-[1920px]:size-7"
             />
             <a
-              href="mailto:esensi.indonesia@yahoo.com"
+              href={`mailto:${EMAIL_ADDRESS}`}
               className={`${CONTACT_TEXT} whitespace-nowrap transition-colors hover:text-gold`}
             >
-              esensi.indonesia@yahoo.com
+              {EMAIL_ADDRESS}
             </a>
           </div>
         </div>
