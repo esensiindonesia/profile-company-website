@@ -1,59 +1,7 @@
-import {
-  CertificatesGrid,
-  type CertificateCardData,
-} from "@/components/certificates-grid";
+import { CertificatesGrid } from "@/components/certificates-grid";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 
-// Fallback only — keeps the page alive when the API is unreachable. The real
-// source of truth is GET /api/certificates (isVisible = true only).
-const FALLBACK: CertificateCardData[] = [
-  {
-    title: "ISO 9001",
-    img: "/certificate/sertif-10.jpg",
-    orientation: "portrait",
-  },
-  {
-    title: "ISO 14001",
-    img: "/certificate/sertif-2.png",
-    orientation: "portrait",
-  },
-  {
-    title: "ISO 45001",
-    img: "/certificate/sertif-3.png",
-    orientation: "portrait",
-  },
-  {
-    title: "BNSP 1",
-    img: "/certificate/sertif-4.png",
-    orientation: "portrait",
-  },
-  {
-    title: "BNSP 2",
-    img: "/certificate/sertif-5.png",
-    orientation: "portrait",
-  },
-  {
-    title: "BNSP 3",
-    img: "/certificate/sertif-6.png",
-    orientation: "portrait",
-  },
-  {
-    title: "K3 BIDANG KONSTRUKSI",
-    img: "/certificate/sertif-7.png",
-    orientation: "landscape",
-  },
-  // {
-  //   title: "K3 TKPK",
-  //   img: "/certificate/sertif-8.png",
-  //   fallbackOrientation: "landscape",
-  // },
-  {
-    title: "ABUJAPI INDONESIA",
-    img: "/certificate/sertif-9.png",
-    orientation: "landscape",
-  },
-];
 
 export default function CertificatesPage() {
   return (
@@ -66,7 +14,7 @@ export default function CertificatesPage() {
           />
         </Reveal>
 
-        <CertificatesGrid fallback={FALLBACK} />
+        <CertificatesGrid />
       </div>
     </section>
   );

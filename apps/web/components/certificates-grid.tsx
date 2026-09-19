@@ -6,10 +6,10 @@ import { CertificateCard } from "@/components/certificate-card";
 import { Reveal } from "@/components/reveal";
 import { getFileUrl } from "@/lib/files";
 
-export type CertificateCardData = {
+type CertificateCardData = {
   title: string;
   img: string;
-  orientation: "portrait" | "landscape";
+  fallbackOrientation: "portrait" | "landscape";
 };
 
 type ApiCertificate = {
@@ -17,12 +17,8 @@ type ApiCertificate = {
   fileUrl: string;
 };
 
-export function CertificatesGrid({
-  fallback,
-}: {
-  fallback: CertificateCardData[];
-}) {
-  const [certificates, setCertificates] = useState(fallback);
+export function CertificatesGrid() {
+  const [certificates, setCertificates] = useState<CertificateCardData[]>([]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -37,13 +33,13 @@ export function CertificatesGrid({
             certs.map((cert) => ({
               title: cert.title,
               img: getFileUrl(cert.fileUrl),
-              orientation: "portrait" as const,
+              fallbackOrientation: "portrait" as const,
             })),
           );
         }
       })
       .catch(() => {
-        // Keep the bundled fallback when the public API is unavailable.
+        // The CMS is the only source for certificate content.
       });
 
     return () => controller.abort();

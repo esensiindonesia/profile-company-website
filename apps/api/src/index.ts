@@ -86,6 +86,17 @@ app.on(["GET", "POST"], "/api/auth/*", (c) => {
 });
 
 app.use("/api/admin/*", async (c, next) => {
+  if (["POST", "PUT", "PATCH", "DELETE"].includes(c.req.method)) {
+    const origin = c.req.header("Origin");
+    const allowedOrigins = (c.env.CORS_ORIGIN ?? "http://localhost:3000")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean);
+    if (!origin || !allowedOrigins.includes(origin)) {
+      return c.json({ error: "Forbidden" }, 403);
+    }
+  }
+
   const auth = createAuth(c.env, c.req.url);
   const session = await auth.api.getSession({
     headers: c.req.raw.headers,

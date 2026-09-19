@@ -3,13 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, Menu, X } from "lucide-react";
+import { KeyRound, LogOut, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ChangePasswordDialog } from "@/components/admin/change-password-dialog";
 import { logout } from "@/lib/admin";
 
 function SidebarContent() {
   const pathname = usePathname();
+  const [changePasswordOpen, setChangePasswordOpen] = useState(false);
+
   return (
     <>
       <div className="px-6 pt-6">
@@ -76,17 +79,29 @@ function SidebarContent() {
         </Link>
       </nav>
 
-      <div className="mt-auto p-4">
+      <div className="mt-auto flex flex-col gap-2 p-4">
         <Button
           type="button"
           variant="ghost"
-          onClick={logout}
+          onClick={() => setChangePasswordOpen(true)}
+          className="h-auto w-full justify-between rounded-lg bg-[#2F4770] px-3.5 py-2 text-[13px] font-medium text-white hover:bg-[#294067] hover:text-white"
+        >
+          Ganti password
+          <KeyRound aria-hidden />
+        </Button>
+        <Button
+          type="button"
+          variant="ghost"
+          onClick={() => void logout()}
           className="h-auto w-full justify-between rounded-lg bg-[#2F4770] px-3.5 py-2 text-[13px] font-medium text-white hover:bg-[#294067] hover:text-white"
         >
           Logout
           <LogOut aria-hidden />
         </Button>
       </div>
+      {changePasswordOpen ? (
+        <ChangePasswordDialog onCloseAction={() => setChangePasswordOpen(false)} />
+      ) : null}
     </>
   );
 }

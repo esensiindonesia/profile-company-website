@@ -13,8 +13,8 @@ const MAX_SCALE = 4;
 // Pin coordinates are in map viewBox units (x: 0-1675, y: 0-795).
 // To move a pin, just change its x/y — nothing else needs touching.
 const LOCATIONS = [
-  { name: "Jakarta", x: 555, y: 345 },
-  { name: "Bandung", x: 750, y: 425 },
+  { name: "Jakarta Selatan", x: 555, y: 345 },
+  { name: "Bandung", x: 680, y: 470 },
   { name: "Semarang", x: 1195, y: 455 },
 ];
 

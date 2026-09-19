@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
-  { label: "Homepage", href: "/" },
+  { label: "Home", href: "/" },
   { label: "Our Services", href: "/services" },
   { label: "Our Certificates", href: "/certificates" },
   { label: "Our Portfolios", href: "/portfolios" },
@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Contact Us", href: "#site-footer" },
 ] as const;
 
-const PHONE_NUMBER = "0228735625";
+const PHONE_NUMBER = "02287356254";
 const EMAIL_ADDRESS = "esensi.indonesia@yahoo.com";
 const CONTACT_TEXT =
   "text-[11px] font-normal leading-normal text-white lg:text-xs min-[1920px]:text-sm";

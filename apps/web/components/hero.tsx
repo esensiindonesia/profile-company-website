@@ -6,18 +6,14 @@ import { whatsappContactUrl } from "@/lib/contact";
 export function Hero() {
   return (
     <section className="relative min-h-[560px] overflow-hidden bg-brand sm:min-h-[620px] lg:min-h-[700px] min-[1920px]:min-h-[832px]">
-      <picture className="absolute inset-0">
-        <source media="(max-width: 767px)" srcSet="/homepage-mobile.jpeg" />
-        <Image
-          src="/homepage-1.png"
-          alt=""
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      </picture>
+      <Image
+        src="/homepage-mobile.jpeg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       <div className="absolute inset-0 bg-white/15" />
       <Reveal className="absolute inset-0">
         <div className="flex h-full flex-col justify-center gap-5 px-6 py-20 sm:py-24 md:gap-8 md:px-24 lg:px-32 min-[1920px]:px-[178px]">

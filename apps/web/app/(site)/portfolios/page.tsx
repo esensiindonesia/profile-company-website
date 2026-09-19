@@ -73,7 +73,7 @@ export default function PortfoliosPage() {
       </div>
 
       {/* CTA banner: full page width */}
-      <div className="mt-16 flex w-full flex-col items-center gap-3 bg-[#93ADD4] px-6 pt-12 pb-16 text-center md:mt-24 md:gap-4 md:pt-16 md:pb-24 min-[1920px]:mt-32 min-[1920px]:gap-5 min-[1920px]:pt-20 min-[1920px]:pb-32">
+      <div className="mt-16 flex w-full flex-col items-center gap-3 bg-[#93ADD4] px-6 pt-12 pb-32 text-center md:mt-24 md:gap-4 md:pt-16 md:pb-24 min-[1920px]:mt-32 min-[1920px]:gap-5 min-[1920px]:pt-20 min-[1920px]:pb-32">
         <h2 className="font-display text-xl font-bold leading-[130%] text-navy md:text-3xl min-[1920px]:text-4xl">
           Konsultasi dan Schedule sekarang!
         </h2>

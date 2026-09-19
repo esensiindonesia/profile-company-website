@@ -21,6 +21,7 @@ export function createAuth(
 
   const requestOrigin = new URL(requestUrl).origin;
   const baseURL = env.BETTER_AUTH_URL?.trim() || requestOrigin;
+  const usesSecureCookies = baseURL.startsWith("https://");
 
   return betterAuth({
     database: drizzleAdapter(createDb(env.DB), {
@@ -30,6 +31,15 @@ export function createAuth(
     baseURL,
     secret: env.BETTER_AUTH_SECRET,
     trustedOrigins: getOrigins(env.CORS_ORIGIN, requestOrigin),
+
+    advanced: {
+      useSecureCookies: usesSecureCookies,
+      defaultCookieAttributes: {
+        secure: usesSecureCookies,
+        sameSite: usesSecureCookies ? "none" : "lax",
+        ...(usesSecureCookies ? { partitioned: true } : {}),
+      },
+    },
     emailAndPassword: {
       enabled: true,
       disableSignUp: !options.allowSignUp,
