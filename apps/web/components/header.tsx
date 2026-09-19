@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { label: "Contact Us", href: "#site-footer" },
 ] as const;
 
-const PHONE_NUMBER = "0228735625";
+const PHONE_NUMBER = "09090909";
 const EMAIL_ADDRESS = "esensi.indonesia@yahoo.com";
 const CONTACT_TEXT =
   "text-[11px] font-normal leading-normal text-white lg:text-xs min-[1920px]:text-sm";
